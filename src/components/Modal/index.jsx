@@ -1,9 +1,10 @@
 /* eslint-disable */
 
 import React from 'react';
-import { ModalContainer, MondalContent, ImgBook, Img, DescriptionBook, TitleBook, Author, Information, DetailsBook, ContentDescription, CloseButton } from './styles';
-import Book from '../../assets/images/bookhabit.png';
+import { ModalContainer, MondalContent, ImgBook, Img ,DescriptionBook, TitleBook, Author, Information, DetailsBook, ContentDescription, CloseButton, MdClear } from './styles';
 import Aspas from '../../assets/images/aspas.png';
+import Book from '../../assets/images/Book.png';
+import Clear from '../../assets/images/cancel.svg';
 
 
 
@@ -16,13 +17,13 @@ export const Modal = ({ showModal, setShowModal }) => {
           <MondalContent showModal={showModal}>
 
             <ImgBook >
-              <Img src={Book} />
+              <Img src={Book}/>
             </ImgBook>
             <DescriptionBook>
               <ContentDescription>
                 <TitleBook> Change By Design
                   Second line exampl...</TitleBook>
-                <Author> Tim Brown, Julie Zhuo, Fried Maximiilian</Author>
+                <Author> Ti, Julie Zhuo, Fried Maximiilian</Author>
                 <Information>
                   <h5> INFORMAÇÕES </h5>
                   <p> Páginas <span> 304 páginas </span></p>
@@ -46,8 +47,8 @@ export const Modal = ({ showModal, setShowModal }) => {
               </ContentDescription>
             </DescriptionBook>
           </MondalContent>
-          <CloseButton type="submit" onClick={() => setShowModal(prev => !prev)} > x </CloseButton>
-          
+          <CloseButton type="submit" onClick={() => setShowModal(prev => !prev)} > <MdClear src={Clear}/> </CloseButton>
+
         </ModalContainer> : null}
 
     </>

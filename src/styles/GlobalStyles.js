@@ -7,5 +7,10 @@ export const GlobalStyle = createGlobalStyle`
   border:0;
   box-sizing:border-box;
   font-family: 'Heebo', sans-serif;
+  width:auto;
+}
+body{
+
+  height:100%;
 }
 `;
