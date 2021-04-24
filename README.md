@@ -21,9 +21,9 @@ Projeto desenvolvido para desafio prático do Ioasys Camp 2021, usando Api dispo
 
 #clonar projeto use o Git Bash e clone o repositório https://github.com/nnovaesisabella/desafioIoasys2021.git
 
-# instale npm i 
+#instale npm i 
 
-# execute com yarn start 
+#execute com yarn start 
 
 Automaticamente  [http://localhost:3000](http://localhost:3000) carregará no seu  browser.
 
