@@ -1,12 +1,10 @@
-/*eslint-disable*/
+import { configureStore } from "@reduxjs/toolkit";
 
-import { configureStore } from "@reduxjs/toolkit"
-
-import userReducer from '../features/userSlice'
-
+//criar o estado e ações da aplicação
+import userReducer from "./userSlice";
 
 export default configureStore({
-  reducer:{
-    user:userReducer,
-  }
-})
+  reducer: {
+    user: userReducer,
+  },
+});

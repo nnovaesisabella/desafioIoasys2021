@@ -1,6 +1,8 @@
 /*eslint-disable*/
-import axios from 'axios';
+import axios from "axios";
 
-export const Api  = axios.create({
-  baseURL:'https://books.ioasys.com.br/api/v1',
-})
+const Api = axios.create({
+  baseURL: "https://books.ioasys.com.br/api/v1/",
+});
+
+export default Api;
