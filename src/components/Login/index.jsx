@@ -1,4 +1,4 @@
-/*eslint-disable*/
+
 import React from "react";
 import Logo from "../../assets/image/logoioasys.png";
 import { InputsContents } from "../InputsLogin";

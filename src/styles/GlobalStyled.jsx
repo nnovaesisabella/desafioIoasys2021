@@ -18,7 +18,7 @@ body{
 /*eslint-disable*/
 export const Container = styled.div`
 	width: 100%;
-	min-height: 100vh;
+	height: auto;
 	background-color: ${({ color }) => color};
 	background-image: url(${({ img }) => img});
     display: flex;

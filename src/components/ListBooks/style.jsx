@@ -1,4 +1,4 @@
-/*eslint-disable*/
+
 import styled from 'styled-components';
 
 
@@ -10,6 +10,7 @@ export const ContentBookList = styled.div`
     min-height:(100vh - 70px);
     padding: 0px 105px 0 100px;
     text-align:center;
+	
 
 
     @media (max-width:755px){
@@ -85,6 +86,9 @@ export const AuthorBooks = styled.p`
 	color: #ab2680;
 	font-size: 0.75rem;
 	font-weight: bold;
+	
+   
+
 `;
 export const NumberPages = styled.p`
 	color: #999999;

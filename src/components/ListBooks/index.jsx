@@ -1,8 +1,9 @@
-/*eslint-disable*/
+
 import React, { useEffect, useState } from "react";
 import Api from "../../services/Api";
 import { Modal } from "../Modal";
 import { Paginator } from "../Pagination";
+import { Container } from "../../styles/GlobalStyled";
 import P from 'prop-types'
 import {
     ContentBookList,
@@ -19,28 +20,28 @@ import {
 
 
 
-const renderBooks = (data,openModal) => {
+const renderBooks = (data, openModal) => {
     return (
         <>
-        {data.map((item, index) => {
-        return (
-          <CardBook key={data.id}  onClick={() => openModal(index)} >
-            <ImgBook>
-              <Img src={item.imageUrl} alt={item.title} />
-            </ImgBook>
-            <ContentDescription>
-              <Title> {item.title}</Title>
-              <AuthorBooks> {item.authors.map((item)=> ` ${item},`)}</AuthorBooks>
-              <NumberPages> {item.pageCount} páginas</NumberPages>
-              <EditionBooks> {item.publisher}</EditionBooks>
-              <PublishingBooks>Publicado em {item.published}</PublishingBooks>
-            </ContentDescription>
-          </CardBook>
-        );
+            {data.map((item, index) => {
+                return (
+                    <CardBook key={data.id} onClick={() => openModal(item.id)} >
+                        <ImgBook>
+                            <Img src={item.imageUrl} alt={item.title} />
+                        </ImgBook>
+                        <ContentDescription>
+                            <Title> {item.title}</Title>
+                            <AuthorBooks> {item.authors.map((item) => ` ${item},`)}</AuthorBooks>
+                            <NumberPages> {item.pageCount} páginas</NumberPages>
+                            <EditionBooks> {item.publisher}</EditionBooks>
+                            <PublishingBooks>Publicado em {item.published}</PublishingBooks>
+                        </ContentDescription>
+                    </CardBook>
+                );
 
-        })};
-         </>
-         );
+            })};
+        </>
+    );
 }
 
 
@@ -51,7 +52,7 @@ const renderBooks = (data,openModal) => {
 
 
 
-export const ContentBooks = ({user}) => {
+export const ContentBooks = ({ user }) => {
     const [posts, setPosts] = useState([]); //Post do response.data
 
     const [showModal, setShowModal] = useState("");
@@ -65,29 +66,37 @@ export const ContentBooks = ({user}) => {
     const [maxPageNumberLimit, setMaxPageNumberLimit] = useState(5);
     const [minPageNumberLimit, setMinPageNumberLimit] = useState(0);
 
+    const [dataModal, setDataModal] = useState([]);
+    const [idModal, setIDmodal] = useState('');
     const pages = [];
 
     for (let i = 1; i <= Math.ceil(posts.length / itemsPerPage); i++) {
         pages.push(i);
     }
 
-    console.log("====================================");
-    console.log(posts);
-    console.log("====================================");
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-    console.log('====================================');
-    console.log("POSTS",posts);
-    console.log('====================================');
+
 
 
     const currentItems = posts.slice(indexOfFirstItem, indexOfLastItem);
 
-    console.log('aqui',currentItems);
+    console.log('aqui', currentItems);
 
     //Modal
-    const openModal = () => {
-        setShowModal((prev) => !prev);
+    const openModal = async (id) => {
+
+        await Api.get(`/books/${id}`, {
+            headers: {
+                Authorization: localStorage.getItem("auth"),
+            }
+        }).then(response => {
+            setShowModal((prev) => !prev);
+            setDataModal(response.data);
+        });
+
+
+
 
     };
 
@@ -121,29 +130,41 @@ export const ContentBooks = ({user}) => {
 
     }, []);
 
+    // loop que remove um item de um array 
+    // 
+    const arrPost = [];
+    for (let i = 0; i < posts.length; i++) {
+
+        if (i <= 24) {
+            arrPost.push(posts[i]);
+        }
+    }
+
     return (
         <>
-            <ContentBookList>
 
-                {renderBooks(currentItems, openModal)}
+           
+            <Container >
+                <Modal item={dataModal} setDataModal={setDataModal} showModal={showModal} setShowModal={setShowModal} />
+                <ContentBookList>
 
+                    {renderBooks(currentItems, openModal)}
 
-                <Modal showModal={showModal} setShowModal={setShowModal} data={currentItems}/>
+                </ContentBookList>
+
+            </Container>
+            <div style={{ position: "relative", bottom: 0 }}>
                 <Paginator
-                    posts={posts}
+                    posts={arrPost}
                     currentPage={currentPage}
                     pages={pages}
                     handlePrevBtn={handlePrevBtn}
                     handleNextBtn={handleNextBtn}
-                />
-
-            </ContentBookList>
-
-
+                /></div>
 
         </>
     );
 };
-ContentBooks.propTypes={
-    user:P.object
+ContentBooks.propTypes = {
+    user: P.object
 }
