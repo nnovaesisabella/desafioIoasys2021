@@ -1,27 +1,51 @@
-/*eslint-disable*/
 import styled from 'styled-components';
 
 
 export const PaginationRouter = styled.div`
- display: flex;
+  display: flex;
   justify-content:flex-end;
   width:80%;
-`;
-export const ListItems = styled.ul`
+  position:absolute;
+  bottom: 20px;
+  right:50px;
+  
+ 
 
+  div{
+      margin-right:16px;
+  }
+
+
+
+ 
 `;
+
 
 export const BtnPrev = styled.button`
   color: black;
   font-weight:600;
   outline:none;
   cursor:pointer;
+  border: 0.5px solid lightgray;
+  border-radius: 50%;
+
+
+  img{
+      width:10px;
+  }
 
 `;
 export const BtnNext = styled.button`
  color: black;
   font-weight:600;
   cursor: pointer;
+  border: 0.5px solid lightgray;
+  border-radius: 50%;
+  margin-left:6px;
+ outline:none;
+   img{
+      width:10px;
+  }
 `;
 
 export const CardBook = styled.div`

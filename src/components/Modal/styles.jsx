@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export const ModalContainer = styled.div`
 
  width:100%;
- height:100vh;
+ min-height:100vh;
  background: rgba(0, 0, 0, 0.8);
  position:absolute;
  top:0;
@@ -13,31 +13,29 @@ export const ModalContainer = styled.div`
  justify-content:center;
  align-items:center;
  text-align:center;
+ background-size: cover;
+ margin:auto;
 
- @media (max-width:1024px){
-     padding-top:130px;
-     height:auto;
- }
 
 @media (max-width:411px){
-     height:auto;
+    
 }
 
 `;
 
 export const MondalContent = styled.div`
-   width: 769px;
-   height: 608px;
+   width: 700px;
+   height: 428px;
    background: #ffffff;
-   display: grid;
-   grid-template-columns: 1fr 1fr;
+   display:flex;
    position:relative;
-   z-index:10;
+   z-index:1;
    border-radius:10px;
-
+   margin-left:auto;
+ 
+ 
    @media (max-width:1024px){
     height:auto;
-    margin-top:15px;
     margin: auto;
     justify-content:cnter;
  }
@@ -58,16 +56,17 @@ export const MondalContent = styled.div`
 
 `;
 export const ImgBook = styled.div`
-   width:100%;
+   width:50%;
    height: 100%;
    justify-content:center;
    display: flex;
    align-items:center;
+   padding:0 0.85rem;
+   
 
 `;
 export const Img = styled.img`
-  height: 512.29px;
-  width:349;
+  width:249;
 
   @media(max-width:812px){
   grid-template-columns: 1fr;
@@ -85,7 +84,8 @@ export const Img = styled.img`
 
 export const DescriptionBook = styled.div`
   overflow: auto;
-  width:96%;
+  width:100%;
+  
 
   @media(max-width:812px){
     display:flex;
@@ -99,7 +99,8 @@ export const DescriptionBook = styled.div`
 `;
 
 export const ContentDescription = styled.div`
-  width:276px;
+  width:306px;
+  padding:0 1.5rem;
 
 
   @media (max-width: 411px){
