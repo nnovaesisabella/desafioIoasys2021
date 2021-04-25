@@ -13,7 +13,7 @@
   
   . Javascript 
   
-  . Eslint 
+  . Prettier 
   
 💻 Projeto
 
