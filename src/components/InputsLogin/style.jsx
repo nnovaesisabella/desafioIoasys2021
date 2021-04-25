@@ -1,6 +1,4 @@
-
-
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const ContainerForms = styled.div`
   width: 368px;

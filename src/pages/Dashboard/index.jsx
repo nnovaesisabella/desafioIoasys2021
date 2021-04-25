@@ -6,11 +6,7 @@ import P from "prop-types";
 
 const Dashboard = ({
   auth,
-  posts,
-  currentPage,
-  pages,
-  handlePrevBtn,
-  handleNextBtn,
+  
 }) => {
   return (
     <DashBoardContainer>
