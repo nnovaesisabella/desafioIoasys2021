@@ -1,5 +1,4 @@
-/* eslint-disable */
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const ModalContainer = styled.div`
   width: 100%;
@@ -189,9 +188,4 @@ export const CloseButton = styled.button`
     margin-top: 420px;
     right: 20px;
   }
-`;
-
-export const MdClear = styled.img`
-  height: 12px;
-  width: 12px;
 `;

@@ -1,5 +1,4 @@
-
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const ContainerLogin = styled.div`
   height: 100vh;
@@ -35,6 +34,6 @@ export const LogoImg = styled.img`
 export const TextBook = styled.h5`
   color: #ffffff;
   font-size: 1.75rem;
-  font-family: "Heebo";
+  font-family: 'Heebo';
   margin-top: 5px;
 `;
