@@ -13,6 +13,8 @@
   
   . Javascript 
   
+  . Eslint 
+  
 💻 Projeto
 
 Projeto desenvolvido para desafio prático do Ioasys Camp 2021, usando Api disponibilizada de livros e autenticação de usuário .
