@@ -5,15 +5,15 @@
 ![Login - Padrão](https://user-images.githubusercontent.com/45005522/115975650-e398e100-a53c-11eb-9b26-bcfb2798d0f8.png)
 
 🚀 Tecnologias
-  . React js
+  -   React js
   
-  . Redux 
+  -   Redux 
   
-  . Eslint
+  -   Eslint
   
-  . Javascript 
+  -   Javascript 
   
-  . Prettier 
+  -   Prettier 
   
 💻 Projeto
 
