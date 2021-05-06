@@ -20,7 +20,7 @@ export const InputsContents = () => {
 
   const history = useHistory();
 
-  //Função que válida o Email, atráves da sua mascara exemple@teste.com.br
+  //Função que válida o Email, atráves da sua máscara exemple@teste.com.br
   const isValidEmail = (email) => {
     /*eslint-disable*/
     let reg = /^[\w.\+]+@\w+.\w{2,}(?:.\w{2})?$/;
